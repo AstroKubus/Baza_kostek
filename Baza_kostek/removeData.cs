@@ -79,16 +79,45 @@ namespace Baza_kostek
                     while (true)
                     {
                         Console.Write("Podaj numer kostki do usunięcia: ");
-                        string odp = Console.ReadLine();
-                        if (CzyInt(odp) != null)
+                        string odp = Console.ReadLine().Trim();
+                        int? po_konwersji = CzyInt(odp);
+                        if (po_konwersji != null)
                         {
 
-                            Console.WriteLine("Nie ma takiego numeru w bazie");
+                            int ile_kostek = wszystkieKostki.Count();
+                            if (ile_kostek >= po_konwersji)
+                            {
+                                wszystkieKostki.RemoveAt((int)po_konwersji-1);
+                                Console.WriteLine("Udało się usunąć kostkę");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Nie ma takiej kostki");
+                                
+                            }
 
                         }
+                        else
+                        {
+                            Console.WriteLine("Twoja liczba nie jest liczbą");
+                            Console.WriteLine("Spróbuj ponownie");
+                        }
                         
-                    }
+                        Console.WriteLine("Czy chcesz spróbować jeszcze raz? (y/n)");
+                        string odp1 = Console.ReadLine().Trim().ToLower();
+                        if (odp1 == "y")
+                        {
+                            continue;
+                        }
+                        else if (odp1 == "n")
+                        {
+                            break;
+                        }
 
+                    }
+                    
+                    break;
                 case "3":
                     goto informacje;
             }

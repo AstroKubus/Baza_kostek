@@ -30,7 +30,9 @@ namespace Baza_kostek
             Powitanie();
 
             List<Kostki> wszystkieKostki = new List<Kostki>();
-
+            wszystkieKostki.Add(new Kostki("LOL", "m d s"));
+            wszystkieKostki.Add(new Kostki("LOL1", "m d s"));
+            wszystkieKostki.Add(new Kostki("LOL2", "m d s"));
 
             while (true)
             {

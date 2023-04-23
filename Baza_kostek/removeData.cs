@@ -119,7 +119,7 @@ namespace Baza_kostek
                     
                     break;
                 case "3":
-                    goto informacje;
+                    break;
             }
 
         }
